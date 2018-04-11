@@ -1,0 +1,31 @@
+body {
+    /*background-color: #5a4c4c;*/
+    background-image:url(/Content/images/Banner7NoContrast.png);
+    padding-top: 0px;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: gray;
+}
+
+.table{
+    padding:20px;
+}
+#data {
+background-color: #FFFFFF;
+
+}
+
+.greyBackground {
+    /*background-color: #5a4c4c;*/
+}
+
+.navbar {
+    background: transparent;
+  
+}
+
+.jumbotron{
+    margin-top:70px;
+}

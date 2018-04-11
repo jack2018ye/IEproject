@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/Home/Index">
+                    <img src="~/Content/images/Logo1.svg" asp-controller="Home" asp-action="Index" class="navbar-brand" />
+                </a>
+                @*<a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">IEProjectDesign2</a>*@
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @*<li><a asp-area="" asp-controller="Home" asp-action="Index" style="color:white">NoContrastOnes</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About" style="color:white">Women2</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact" style="color:white">Parking</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Man" style="color:white">Man</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Women" style="color:white">Woman1</a></li>*@
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div>
+        <div class="greyBackground">
+            @RenderBody()
+            <hr />
+        </div>
+        <div class="container text-center">
+            <footer>
+                <p>&copy; 2018 - IEProjectDesign2</p>
+            </footer>
+        </div>
+    </div>
+
+    <environment include="Development">
+        <script src="~/Scripts/jquery.js"></script>
+        <script src="~/Scripts/bootstrap.js"></script>
+        <script src="~/Scripts/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="~/Scripts/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

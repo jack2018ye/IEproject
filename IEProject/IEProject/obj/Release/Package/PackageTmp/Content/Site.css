@@ -1,0 +1,115 @@
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+/*Weird stuff here: static text and buttons at on top of the slide show*/
+.main-text {
+    position: absolute;
+    top: 50px;
+    width: 96.66666666666666%;
+    color: #FFF;
+}
+
+.btn-min-block {
+    min-width: 170px;
+    line-height: 26px;
+}
+
+.btn-clear {
+    color: #FFF;
+    background-color: transparent;
+    border-color: #FFF;
+    margin-right: 15px;
+}
+
+    .btn-clear:hover {
+        color: #000;
+        background-color: #FFF;
+    }
+
+/*Weid stuff 1 ends here*/
+
+/*Tiles start here*/
+.btn-sq-lg {
+    width: 150px !important;
+    height: 150px !important;
+}
+
+.btn-sq {
+    width: 100px !important;
+    height: 100px !important;
+    font-size: 10px;
+}
+
+.btn-sq-sm {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 10px;
+}
+
+.btn-sq-xs {
+    width: 25px !important;
+    height: 25px !important;
+    padding: 2px;
+}
+
+.navbar-brand {
+    height: 50px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+/*Button*/
+.btn-warning {
+    background-color: #ff8d00;
+    border-color: #ff8d00;
+}
+
+.images1 {
+    background-image: url("~/images/763147.jpg");
+}
+/*Tiles end here*/
+.carousel-caption {
+    color: white;
+}
+
+/*Button*/
+.btn-warning {
+    background-color: #ff8d00;
+    border-color: #ff8d00;
+}
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}

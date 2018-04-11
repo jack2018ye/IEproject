@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="AccessibilityEntities-Web.config Connection String" description="AccessibilityEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.PublicToilet.csdl|res://*/Models.PublicToilet.ssdl|res://*/Models.PublicToilet.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\AccessibilityEntities.mdf;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Kode_\\OneDrive\\Documents\\Visual\ Studio\ 2015\\IEProject\\IEProject\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='AccessibilityEntities']/@connectionString" />
+  </parameter>
+  <parameter name="SqlServer-Web.config Connection String" description="SqlServer Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:accessibilityentities.database.windows.net,1433;Initial Catalog=AccessibilityEntities;Persist Security Info=False;User ID={username};Password={Password2};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Kode_\\OneDrive\\Documents\\Visual\ Studio\ 2015\\IEProject\\IEProject\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SqlServer']/@connectionString" />
+  </parameter>
+</parameters>

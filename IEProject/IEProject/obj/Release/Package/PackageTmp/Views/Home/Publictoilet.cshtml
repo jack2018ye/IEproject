@@ -1,0 +1,141 @@
+﻿@model IEProject.Models.PublicToiletForm
+
+@{
+    ViewBag.Title = "Publictoilet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/ServicePage.css" rel="stylesheet" />
+
+<div class="container">
+
+    <div class="jumbotron" style="background-color:transparent;padding-top:10px">
+        <nav aria-label="breadcrumb" style="background-color:transparent;color:white">
+            <ol class="breadcrumb" style="background-color:transparent;">
+                <li class="breadcrumb-item" style="color:white"><a href="/Home/Index">Home</a></li>
+                <li class="breadcrumb-item active" style="color:white" aria-current="page">Public Toilets</li>
+            </ol>
+        </nav>
+
+        <img src="~/Content/images/disabled-128.png" width="100" height="100" />
+        <span style="color:white;font-size:45px;background-color:#00b8ff;padding-top:0px;padding-bottom:0px;padding-left:3px;padding-right:3px">
+            Find Public Toilets
+        </span>
+
+        @using (Html.BeginForm("Publictoilet", "Home", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="container" style="margin-left:40px">
+                <div class="form-group" style="width:700px">
+
+
+                    @*@Html.Label("Destination Address", htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    <label for="usr" style="color:white;font-size:24px;margin-top:25px">Enter your destination address or postcode</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                        <div style="background-color:white;margin-top:15px;padding-left:15px">
+                            @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-10">
+                    @Html.HiddenFor(model => model.Latitude, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Latitude, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-10">
+                    @Html.HiddenFor(model => model.Longitude, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Longitude, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-10">
+                    @Html.HiddenFor(model => model.select, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.select, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Search" style="margin:40px" class="btn btn-warning btn-min-block btn-lg" />
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <table id="data" font color="#FFFFFF" style="margin-left:40px" class="table">
+
+                <thead>
+                    <tr>
+                        <th>
+
+                            @Html.Label("Result", htmlAttributes: new { @class = "control-label col-md-6" })
+                        </th>
+
+                        <th>
+                            @Html.Label("Distance(Meters)", htmlAttributes: new { @class = "control-label col-md-2" })
+                        </th>
+
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var element in Model.sorttoilets)
+                {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(m => element.name)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(m => element.distance)
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+
+            @*<div class="container" style="margin-left:40px" id="data">
+                    <ul class="list-group">
+                        @foreach (var element in Model.sorttoilets)
+                    {
+                            <li class="list-group-item">@Html.DisplayFor(m => element.name)<span class="badge">@Html.DisplayFor(m => element.distance) meters</span></li>
+                        }
+
+                    </ul>
+                </div>*@
+
+        if (Model.sorttoilets.Count != 0)
+        {
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="button" value="Print table as pdf" class="btn" id="pdf" />
+                </div>
+            </div>
+
+            }
+
+        }
+    </div>
+
+
+
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/Scripts/jquery.js")
+    @Scripts.Render("http://maps.googleapis.com/maps/api/js?key=AIzaSyBZzu_YhFO2ZMS1c2OwgpWdW_pFa0Mhxq8&sensor=false&libraries=places")
+    @Scripts.Render("~/Scripts/autoapi.js")
+    @Scripts.Render("https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js")
+    @Scripts.Render("https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.2/jspdf.plugin.autotable.js")
+    @Scripts.Render("~/Scripts/pdfprint.js")
+
+}
+

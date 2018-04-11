@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AccessibilityEntitiesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="PublicToilet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="lat" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="lon" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="female" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="male" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="wheelchair" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="operator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="baby_facil" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="location" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="AccessibilityEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PublicToilets" EntityType="Self.PublicToilet" />
+  </EntityContainer>
+</Schema>

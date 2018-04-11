@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AccessibilityEntitiesModelStoreContainer" CdmEntityContainer="AccessibilityEntities">
+    <EntitySetMapping Name="PublicToilets">
+      <EntityTypeMapping TypeName="AccessibilityEntitiesModel.PublicToilet">
+        <MappingFragment StoreEntitySet="PublicToilet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="lat" ColumnName="lat" />
+          <ScalarProperty Name="lon" ColumnName="lon" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="female" ColumnName="female" />
+          <ScalarProperty Name="male" ColumnName="male" />
+          <ScalarProperty Name="wheelchair" ColumnName="wheelchair" />
+          <ScalarProperty Name="operator" ColumnName="operator" />
+          <ScalarProperty Name="baby_facil" ColumnName="baby_facil" />
+          <ScalarProperty Name="location" ColumnName="location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

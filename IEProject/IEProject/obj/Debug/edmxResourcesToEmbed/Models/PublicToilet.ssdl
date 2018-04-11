@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AccessibilityEntitiesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="PublicToilet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="lat" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="lon" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="female" Type="nvarchar" MaxLength="50" />
+    <Property Name="male" Type="nvarchar" MaxLength="50" />
+    <Property Name="wheelchair" Type="nvarchar" MaxLength="50" />
+    <Property Name="operator" Type="nvarchar" MaxLength="50" />
+    <Property Name="baby_facil" Type="nvarchar" MaxLength="50" />
+    <Property Name="location" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityContainer Name="AccessibilityEntitiesModelStoreContainer">
+    <EntitySet Name="PublicToilet" EntityType="Self.PublicToilet" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

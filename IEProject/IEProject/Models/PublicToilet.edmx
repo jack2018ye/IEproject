@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AccessibilityEntitiesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PublicToilet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="lat" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="lon" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="female" Type="nvarchar" MaxLength="50" />
+          <Property Name="male" Type="nvarchar" MaxLength="50" />
+          <Property Name="wheelchair" Type="nvarchar" MaxLength="50" />
+          <Property Name="operator" Type="nvarchar" MaxLength="50" />
+          <Property Name="baby_facil" Type="nvarchar" MaxLength="50" />
+          <Property Name="location" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityContainer Name="AccessibilityEntitiesModelStoreContainer">
+          <EntitySet Name="PublicToilet" EntityType="Self.PublicToilet" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AccessibilityEntitiesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="PublicToilet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="lat" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="lon" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="female" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="male" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="wheelchair" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="operator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="baby_facil" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="location" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="AccessibilityEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PublicToilets" EntityType="Self.PublicToilet" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AccessibilityEntitiesModelStoreContainer" CdmEntityContainer="AccessibilityEntities">
+          <EntitySetMapping Name="PublicToilets">
+            <EntityTypeMapping TypeName="AccessibilityEntitiesModel.PublicToilet">
+              <MappingFragment StoreEntitySet="PublicToilet">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="lat" ColumnName="lat" />
+                <ScalarProperty Name="lon" ColumnName="lon" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="female" ColumnName="female" />
+                <ScalarProperty Name="male" ColumnName="male" />
+                <ScalarProperty Name="wheelchair" ColumnName="wheelchair" />
+                <ScalarProperty Name="operator" ColumnName="operator" />
+                <ScalarProperty Name="baby_facil" ColumnName="baby_facil" />
+                <ScalarProperty Name="location" ColumnName="location" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
